@@ -55,9 +55,9 @@ db.push("key", "element");
 db.delAll();
 ```
 
-**Fetch All Function:**
+**Store Function:**
 ```js
-db.fetchAll();
+db.store("key"); // No need to use twice! after this use "db.get()"
 ```
 
 **Get All Function:**
