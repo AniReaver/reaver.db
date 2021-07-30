@@ -17,7 +17,7 @@ And thats it!
 
 **Get Function:**
 ```js
-db.get("key"); // If there is nothing with this key on the database it will create one for you!
+db.get("key"); // If there is nothing with this key on the database it will create one for you and automatically be set to 0.
 ```
 
 **Set Function:**
