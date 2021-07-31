@@ -37,12 +37,12 @@ db.fetch("key") // Fetches a key from the database
 
 **Add Function:**
 ```js
-db.get("key", "number/count"); // Gets a key from the database
+db.get("key"); // Gets a key from the database
 ```
 
 **Subtract Function:**
 ```js
-db.has("key", "number/count"); // Returns a boolean if the database has a key or not
+db.has("key"); // Returns a boolean if the database has a key or not
 ```
 
 **Push Function:**
