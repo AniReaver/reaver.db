@@ -20,27 +20,27 @@ And thats it!
 db.add("key", "value"); // If there is nothing with this key on the database it will create one for you and automatically be set to 0.
 ```
 
-**Set Function:**
+**All Function:**
 ```js
 db.all(); // Gets all the data
 ```
 
-**Has Function:**
+**Delete Function:**
 ```js
 db.delete("key"); // Deletes a key you choose
 ```
 
-**Delete Function:**
+**Fetch Function:**
 ```js
 db.fetch("key") // Fetches a key from the database
 ```
 
-**Add Function:**
+**Get Function:**
 ```js
 db.get("key"); // Gets a key from the database
 ```
 
-**Subtract Function:**
+**Has Function:**
 ```js
 db.has("key"); // Returns a boolean if the database has a key or not
 ```
@@ -50,7 +50,7 @@ db.has("key"); // Returns a boolean if the database has a key or not
 db.push("key", "value"); // Pushes a value to the database
 ```
 
-**Delete All Function:**
+**Fetch All Function:**
 ```js
 db.fetchAll(); // Fetches all the data from the database
 ```
