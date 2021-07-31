@@ -1,10 +1,10 @@
 # How The Package Works?
-**It works with a simple 2 lines of code that create the json database for your project your using**
+**It works with a simple 2 lines of code that create the sql database for your project your using**
 
 **Use this for creating:**
 ```js
 const Database = require("reaver.db");
-const db = new Database();
+const db = new Database("File Name"); // If there will be no file name it will put the default
 ```
 
 And thats it!
@@ -15,49 +15,49 @@ And thats it!
 
 **---------------------------------------------------------------------**
 
-**Get Function:**
+**Add Function:**
 ```js
-db.get("key"); // If there is nothing with this key on the database it will create one for you and automatically be set to 0.
+db.add("key", "value"); // If there is nothing with this key on the database it will create one for you and automatically be set to 0.
 ```
 
 **Set Function:**
 ```js
-db.set("key", "value");
+db.all(); // Gets all the data
 ```
 
 **Has Function:**
 ```js
-db.has("key", "value");
+db.delete("key"); // Deletes a key you choose
 ```
 
 **Delete Function:**
 ```js
-db.del("key")
+db.fetch("key") // Fetches a key from the database
 ```
 
 **Add Function:**
 ```js
-db.add("key", "number/count");
+db.get("key", "number/count"); // Gets a key from the database
 ```
 
 **Subtract Function:**
 ```js
-db.subtract("key", "number/count");
+db.has("key", "number/count"); // Returns a boolean if the database has a key or not
 ```
 
 **Push Function:**
 ```js
-db.push("key", "element");
+db.push("key", "value"); // Pushes a value to the database
 ```
 
 **Delete All Function:**
 ```js
-db.delAll();
+db.fetchAll(); // Fetches all the data from the database
 ```
 
 **Get All Function:**
 ```js
-db.getAll();
+db.getAll(); // Gets all the data from the database
 ```
 
 **---------------------------------------------------------------------**
