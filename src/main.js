@@ -94,11 +94,11 @@ module.exports = function(file) {
             // Set Name
             if (typeof tableName !== "string")
                 throw new TypeError(
-                    "Table name has to be a string. Need Help? Check out: discord.gg/plexidev"
+                    "Table name has to be a string."
                 );
             else if (tableName.includes(" "))
                 throw new TypeError(
-                    "Table name cannot include spaces. Need Help? Check out: discord.gg/plexidev"
+                    "Table name cannot include spaces."
                 );
             this.tableName = tableName;
 
@@ -106,7 +106,7 @@ module.exports = function(file) {
             this.fetch = function (key, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 return arbitrate(
                     "fetch",
@@ -118,7 +118,7 @@ module.exports = function(file) {
             this.get = function (key, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 return arbitrate(
                     "fetch",
@@ -130,11 +130,11 @@ module.exports = function(file) {
             this.set = function (key, value, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 if (!value && value != 0)
                     throw new TypeError(
-                        "No value specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No value specified."
                     );
                 return arbitrate(
                     "set",
@@ -146,11 +146,11 @@ module.exports = function(file) {
             this.add = function (key, value, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 if (isNaN(value))
                     throw new TypeError(
-                        "Must specify value to add. Need Help? Check Out: discord.gg/plexidev"
+                        "Must specify value to add."
                     );
                 return arbitrate(
                     "add",
@@ -162,11 +162,11 @@ module.exports = function(file) {
             this.subtract = function (key, value, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 if (isNaN(value))
                     throw new TypeError(
-                        "Must specify value to add. Need Help? Check Out: discord.gg/plexidev"
+                        "Must specify value to add."
                     );
                 return arbitrate(
                     "subtract",
@@ -178,11 +178,11 @@ module.exports = function(file) {
             this.push = function (key, value, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 if (!value && value != 0)
                     throw new TypeError(
-                        "Must specify value to push. Need Help? Check Out: discord.gg/plexidev"
+                        "Must specify value to push."
                     );
                 return arbitrate(
                     "push",
@@ -194,7 +194,7 @@ module.exports = function(file) {
             this.delete = function (key, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 return arbitrate(
                     "delete",
@@ -206,7 +206,7 @@ module.exports = function(file) {
             this.has = function (key, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 return arbitrate(
                     "has",
@@ -218,7 +218,7 @@ module.exports = function(file) {
             this.includes = function (key, ops) {
                 if (!key)
                     throw new TypeError(
-                        "No key specified. Need Help? Check Out: discord.gg/plexidev"
+                        "No key specified."
                     );
                 return arbitrate(
                     "has",
