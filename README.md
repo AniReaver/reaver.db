@@ -60,6 +60,6 @@ db.fetchAll(); // Fetches all the data from the database
 db.getAll(); // Gets all the data from the database
 ```
 
-**---------------------------------------------------------------------**
+**----------------------------------------------------------------------**
 
 **And Thats All Have Fun With My Package! ✨**
