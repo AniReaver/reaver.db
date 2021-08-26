@@ -2,6 +2,8 @@
     reaver.db Definitions
 */
 
+import Database from '../src/main';
+
 interface Options {
     target?: string | null;
     table?: string
@@ -9,7 +11,7 @@ interface Options {
 
 type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
 
-export class Database {
+export default class Database {
     /**
      * The main consturctor (new Database()) that contains all the functions
      */
