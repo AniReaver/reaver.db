@@ -118,6 +118,14 @@ declare module 'reaver.db' {
          * @param ops 
          */
         public deleteTable(ops?:Options): any;
+
+        /**
+         * The tables function that shows all the tables of the database
+         * @param ops 
+         */
+        public tables(ops?:Options): any[];
     }
     export = Database;
+
+    export const version: string;
 }

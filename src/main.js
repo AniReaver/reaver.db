@@ -19,6 +19,7 @@ module.exports = function(file) {
         type: require('./lib/type'),
         createTable: require('./lib/createTable'),
         deleteTable: require('./lib/deleteTable'),
+        tables: require('./lib/tables')
     }
 
     module = {
@@ -104,6 +105,10 @@ module.exports = function(file) {
         deleteTable: function(ops) {
             return arbitrate("deleteTable", { ops: ops || {} });
         },
+
+        tables: function(ops) {
+            return arbitrate("tables", { ops: ops || {} });
+        }
     };
 
     function arbitrate(method, params, tableName) {
