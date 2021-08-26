@@ -11,6 +11,7 @@ All you need to do is use the cli of npm/yarn to install
 **Example**:
 ```
 npm install reaver.db
+npm install https://github.com/ItsReaver/reaver.db
 yarn add reaver.db
 ```
 
