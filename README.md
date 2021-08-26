@@ -131,4 +131,4 @@ Me! (Reaver)
 
 # Finishing!
 Hope you all liked my package and i hope you will use it!
-Thanls for reading this page till the end and understanding the functions and the basics of my database, Hope you guys enjoy and i will see you in my next package 👋
+Thanks for reading this page till the end and understanding the functions and the basics of my database, Hope you guys enjoy and i will see you in my next package 👋
