@@ -126,6 +126,4 @@ declare module 'reaver.db' {
         public tables(ops?:Options): any[];
     }
     export = Database;
-
-    export const version: string;
 }
