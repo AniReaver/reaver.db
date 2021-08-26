@@ -33,14 +33,6 @@ db.set("Items", {
 // You can use that data any further you want with all the methods down below
 ```
 
-Here is a bonus for checking the database version
-
-```js
-const Database = require('reaver.db');
-
-console.log(Database.version)
-```
-
 # Methods
 Here will be the list of methods and their usages:
 ```js
