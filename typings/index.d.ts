@@ -2,14 +2,16 @@
     reaver.db Definitions
 */
 
-interface Options {
-    target?: string | null;
-    table?: string
-}
-
-type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
-
 declare module 'reaver.db' {
+    interface Options {
+        target?: string | null;
+        table?: string
+    }
+    
+    type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
+
+    const version: string;
+
     class Database {
         /**
          * The main consturctor (new Database()) that contains all the functions
