@@ -1,65 +1,133 @@
-# How The Package Works?
-**It works with a simple 2 lines of code that create the sql database for your project your using**
+# 🌟 **REAVER.DB** 🌟
 
-**Use this for creating:**
-```js
-const Database = require("reaver.db");
-const db = new Database("File Name"); // If there will be no file name it will put the default
+# **Introduction**
+My name is Reaver (AKA LeBanana) and this is my own database,
+It can be used for projects and discord bots,
+down below will be all the things you need to know about this database!
+
+# Installation
+All you need to do is use the cli of npm/yarn to install
+
+**Example**:
+```
+npm install reaver.db
+yarn add reaver.db
 ```
 
-And thats it!
+# Example Usage
+Here is an example for reaver.db usage:
 
-# The Package's Functions
-
-**Here will be all the functions your can use in this package**
-
-**---------------------------------------------------------------------**
-
-**Add Function:**
 ```js
-db.add("key", "value"); // If there is nothing with this key on the database it will create one for you and automatically be set to 0.
+const Database = require('reaver.db');
+const db = new Database("File Path") // No need to puth the path it will put json.sqlite by default
+
+db.createTable("Items");
+
+db.set("Items", {
+    Sword: { ID: 1, Price: 1000 },
+    Potion: { ID: 2, Price: 2500 },
+    Shield: { ID: 3, Price: 5000 }
+});
+
+// You can use that data any further you want with all the methods down below
 ```
 
-**All Function:**
+# Methods
+Here will be the list of methods and their usages:
 ```js
-db.all(); // Gets all the data
+db.createTable("Table Name");
+db.deleteTable("Existing Table Name");
+db.get("key");
+db.set("key", value);
+db.add("key", number);
+db.subtract("key", number);
+db.has("key");
+db.fetch("key");
+db.push("key", element);
+db.type("key");
+db.deleteAll();
+db.getAll();
+db.fetchAll();
 ```
 
-**Delete Function:**
+There will be more explained method usages down below 👇
+
+# In code usages
+<h3>Here will be more explained functions of the databases</h3>
+
+createTable():
 ```js
-db.delete("key"); // Deletes a key you choose
+db.createTable("Items");
+
+// Insert data into the table
 ```
 
-**Fetch Function:**
+deleteTable():
 ```js
-db.fetch("key") // Fetches a key from the database
+db.deleteTable("Items");
 ```
 
-**Get Function:**
+get():
 ```js
-db.get("key"); // Gets a key from the database
+db.get("Items");
+
+console.log(db.get("Items"));
 ```
 
-**Has Function:**
+set():
 ```js
-db.has("key"); // Returns a boolean if the database has a key or not
+db.set("Items", {
+    Sword: { ID: 1, Price: 1000 },
+    Potion: { ID: 2, Price: 2500 },
+    Shield: { ID: 3, Price: 5000 }
+});
+
+console.log(db.get("Items"));
 ```
 
-**Push Function:**
+add():
 ```js
-db.push("key", "value"); // Pushes a value to the database
+db.add("Coins", 159);
+
+console.log(db.get("Coins"));
 ```
 
-**Fetch All Function:**
+subtract():
 ```js
-db.fetchAll(); // Fetches all the data from the database
+db.subtract("Coins", 150);
+
+console.log(db.get("Coins"));
 ```
 
-**Get All Function:**
+has():
 ```js
-db.getAll(); // Gets all the data from the database
+console.log(db.has("Items"));
 ```
 
-**----------------------------------------------------------------------**
+fetch():
+```js
+db.fetch("Items");
 
-**And Thats All Have Fun With My Package! ✨**
+console.log(db.fetch("Items"));
+```
+
+push():
+```js
+db.push("Items", { 
+    Bow: { ID: 4, Price: 6000 }
+});
+
+console.log(db.get("Items"));
+```
+
+type():
+```js
+console.log(db.type("Items"));
+```
+
+# **Authors**
+Me! (Reaver)
+
+# Finishing!
+Hope you all liked my package and i hope you will use it!
+Thanls for reading this page till the end and understanding the functions and the basics of my database, Hope you guys enjoy and i will see you in my next package 👋

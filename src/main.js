@@ -5,17 +5,20 @@ module.exports = function(file) {
 
     if(!db) db = new Database(file || "./json.sqlite");
 
-   var methods = {
-        get: require('./methods/get'),
-        fetch: require("./methods/fetch"),
-        set: require("./methods/set"),
-        add: require("./methods/add"),
-        subtract: require('./methods/subtract'),
-        push: require('./methods/push'),
-        delete: require('./methods/delete'),
-        has: require('./methods/has'),
-        all: require('./methods/all'),
-        type: require('./methods/type'),
+    var methods = {
+        get: require('./lib/get'),
+        fetch: require("./lib/fetch"),
+        set: require("./lib/set"),
+        add: require("./lib/add"),
+        subtract: require('./lib/subtract'),
+        push: require('./lib/push'),
+        delete: require('./lib/delete'),
+        deleteAll: require('./lib/deleteAll'),
+        has: require('./lib/has'),
+        all: require('./lib/all'),
+        type: require('./lib/type'),
+        createTable: require('./lib/createTable'),
+        deleteTable: require('./lib/deleteTable'),
     }
 
     module = {
@@ -68,6 +71,10 @@ module.exports = function(file) {
             return arbitrate("delete", { id: key, ops: ops || {} });
         },
 
+        deleteAll: function(ops) {
+            return arbitrate("deleteAll", { ops: ops || {} });
+        },
+
         has: function(key, ops) {
             if(!key) throw new TypeError("A Key Must Be Provided In The Has Function.");
             return arbitrate("has", { id: key, ops: ops || {} });
@@ -90,156 +97,19 @@ module.exports = function(file) {
             return arbitrate("type", { id: key, ops: ops || {} });
         },
 
-        table: function (tableName, options = {}) {
-            // Set Name
-            if (typeof tableName !== "string")
-                throw new TypeError(
-                    "Table name has to be a string."
-                );
-            else if (tableName.includes(" "))
-                throw new TypeError(
-                    "Table name cannot include spaces."
-                );
-            this.tableName = tableName;
+        createTable: function(ops) {
+            return arbitrate("createTable", { ops: ops || {} });
+        },
 
-            // Methods
-            this.fetch = function (key, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                return arbitrate(
-                    "fetch",
-                    { id: key, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.get = function (key, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                return arbitrate(
-                    "fetch",
-                    { id: key, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.set = function (key, value, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                if (!value && value != 0)
-                    throw new TypeError(
-                        "No value specified."
-                    );
-                return arbitrate(
-                    "set",
-                    { id: key, data: value, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.add = function (key, value, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                if (isNaN(value))
-                    throw new TypeError(
-                        "Must specify value to add."
-                    );
-                return arbitrate(
-                    "add",
-                    { id: key, data: value, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.subtract = function (key, value, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                if (isNaN(value))
-                    throw new TypeError(
-                        "Must specify value to add."
-                    );
-                return arbitrate(
-                    "subtract",
-                    { id: key, data: value, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.push = function (key, value, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                if (!value && value != 0)
-                    throw new TypeError(
-                        "Must specify value to push."
-                    );
-                return arbitrate(
-                    "push",
-                    { id: key, data: value, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.delete = function (key, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                return arbitrate(
-                    "delete",
-                    { id: key, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.has = function (key, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                return arbitrate(
-                    "has",
-                    { id: key, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.includes = function (key, ops) {
-                if (!key)
-                    throw new TypeError(
-                        "No key specified."
-                    );
-                return arbitrate(
-                    "has",
-                    { id: key, ops: ops || {} },
-                    this.tableName
-                );
-            };
-
-            this.fetchAll = function (ops) {
-                return arbitrate("all", { ops: ops || {} }, this.tableName);
-            };
-
-            this.all = function (ops) {
-                return arbitrate("all", { ops: ops || {} }, this.tableName);
-            };
+        deleteTable: function(ops) {
+            return arbitrate("deleteTable", { ops: ops || {} });
         },
     };
 
     function arbitrate(method, params, tableName) {
         if(typeof params.id == 'number') params.id = params.id.toString();
         let options = {
+            target: params.ops.target,
             table: tableName || params.ops.table || "json"
         };
 
