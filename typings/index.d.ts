@@ -10,8 +10,6 @@ declare module 'reaver.db' {
     
     type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
 
-    const version: string;
-
     class Database {
         /**
          * The main consturctor (new Database()) that contains all the functions
