@@ -9,10 +9,9 @@ interface Options {
 
 type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
 
-export default class Database {
+export class Database {
     /**
      * The main consturctor (new Database()) that contains all the functions
-     * @param path
      */
     public constructor(path?: string);
 
