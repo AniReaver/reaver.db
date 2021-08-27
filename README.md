@@ -49,6 +49,7 @@ db.type("key");
 db.deleteAll();
 db.getAll();
 db.fetchAll();
+db.tables();
 ```
 
 There will be more explained method usages down below 👇
@@ -124,6 +125,11 @@ console.log(db.get("Items"));
 type():
 ```js
 console.log(db.type("Items"));
+```
+
+tables():
+```js
+console.log(db.tables());
 ```
 
 # **Authors**
