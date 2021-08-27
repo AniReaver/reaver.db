@@ -1,6 +1,6 @@
 {
   "name": "reaver.db",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "description": "✨ A database for your projects that uses sql!",
   "main": "index.js",
   "types": "typings/index.d.ts",
