@@ -19,7 +19,7 @@ yarn add reaver.db
 Here is an example for reaver.db usage:
 
 ```js
-const Database = require('reaver.db');
+const { Database } = require('reaver.db');
 const db = new Database("File Path") // No need to puth the path it will put json.sqlite by default
 
 db.createTable("Items");
@@ -57,26 +57,26 @@ There will be more explained method usages down below 👇
 # In code usages
 <h3>Here will be more explained functions of the databases</h3>
 
-createTable():
+createTable(name):
 ```js
 db.createTable("Items");
 
 // Insert data into the table
 ```
 
-deleteTable():
+deleteTable(name):
 ```js
 db.deleteTable("Items");
 ```
 
-get():
+get(key):
 ```js
 db.get("Items");
 
 console.log(db.get("Items"));
 ```
 
-set():
+set(key, value):
 ```js
 db.set("Items", {
     Sword: { ID: 1, Price: 1000 },
@@ -87,33 +87,33 @@ db.set("Items", {
 console.log(db.get("Items"));
 ```
 
-add():
+add(key, number):
 ```js
 db.add("Coins", 159);
 
 console.log(db.get("Coins"));
 ```
 
-subtract():
+subtract(key, number):
 ```js
 db.subtract("Coins", 150);
 
 console.log(db.get("Coins"));
 ```
 
-has():
+has(key):
 ```js
 console.log(db.has("Items"));
 ```
 
-fetch():
+fetch(key):
 ```js
 db.fetch("Items");
 
 console.log(db.fetch("Items"));
 ```
 
-push():
+push(key, element):
 ```js
 db.push("Items", { 
     Bow: { ID: 4, Price: 6000 }
@@ -122,7 +122,7 @@ db.push("Items", {
 console.log(db.get("Items"));
 ```
 
-type():
+type(key):
 ```js
 console.log(db.type("Items"));
 ```
@@ -130,6 +130,22 @@ console.log(db.type("Items"));
 tables():
 ```js
 console.log(db.tables());
+```
+
+# **Utilities**
+Here down below will be the usage for creating new util class:
+```js
+const { Util } = require('reaver.db');
+const util = new Util("You File Path");
+```
+
+Here down below will be the usage of the utils:
+
+parseDataKey(key):
+```js
+Util.parseDataKey("coins-88888-88888");
+
+// { id: "coins", target: '88888-88888 };
 ```
 
 # **Authors**

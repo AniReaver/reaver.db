@@ -10,7 +10,20 @@ declare module 'reaver.db' {
     
     type DataValue = string | object | number | null | boolean | bigint | symbol | any[];
 
-    class Database {
+    export class Util {
+        /**
+         * The main constructor (new Util()) that contains all the functions
+         */
+        public constructor(path: string);
+
+        /**
+         * The parse data key that parses keys that you type in the function
+         * @param key
+         */
+        public parseDataKey(key?: string): any;
+    }
+
+    export class Database {
         /**
          * The main consturctor (new Database()) that contains all the functions
          */
@@ -125,5 +138,4 @@ declare module 'reaver.db' {
          */
         public tables(ops?:Options): any[];
     }
-    export = Database;
 }
