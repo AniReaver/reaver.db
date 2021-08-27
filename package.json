@@ -9,8 +9,23 @@
     "dev": "nodemon",
     "test": "node spec/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsReaver/reaver.db.git"
+  },
+  "keywords": [
+    "database",
+    "storing data",
+    "sqlite database",
+    "javascript",
+    "sqlite"
+  ],
   "author": "Reaver",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItsReaver/reaver.db/issues"
+  },
+  "homepage": "https://github.com/ItsReaver/reaver.db#readme",
   "dependencies": {
     "better-sqlite3": "^7.4.3",
     "lodash": "^4.17.21",
