@@ -136,7 +136,7 @@ console.log(db.tables());
 Here down below will be the usage for creating new util class:
 ```js
 const { Util } = require('reaver.db');
-const util = new Util("You File Path");
+const util = new Util("Your File Path");
 ```
 
 Here down below will be the usage of the utils:
