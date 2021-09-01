@@ -1,13 +1,14 @@
 {
   "name": "reaver.db",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "✨ A database for your projects that uses sql!",
   "main": "index.js",
   "types": "typings/index.d.ts",
   "scripts": {
     "start": "node .",
     "dev": "nodemon",
-    "test": "node spec/index.js"
+    "test": "node spec/index.js",
+    "audit": "npm audit fix"
   },
   "repository": {
     "type": "git",
